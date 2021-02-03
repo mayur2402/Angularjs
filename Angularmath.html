@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Math using angular</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="" ng-init="num1=0,num2=0">
+		Enter num1 <input type="number" name="num1" ng-model="num1"><br>
+		Enter num1 <input type="number" name="num1" ng-model="num2"><br>
+
+		<p>
+			Addition = {{num1+num2}}<br>
+			Substraction = {{num1-num2}}<br>
+			Multiplication = {{num1*num2}}<br>
+			Division = {{num1/num2}}<br>
+		</p>
+		
+	</div>
+</body>
+</html>

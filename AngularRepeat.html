@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ng repeat</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<!--	<div ng-app="" ng-init="name=['sagar','devarshi','aniket']">
+	<li ng-repeat='x in name'>
+		{{x}}		
+	</li>		
+	</div>-->
+
+	<div ng-app="" ng-init="language=[{name:'sagar',lang:'python'},{name:'aniket',lang:'java'},{name:'devarshi',lang:'cpp'}]">
+	<ul>
+	<li ng-repeat='x in language'>
+		{{x.name}} = {{x.lang}}
+	</li>
+	</ul>
+	</div>
+</body>
+</html>

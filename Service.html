@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Service</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app = 'myApp' ng-controller = 'myCtrl'>
+		<p>$location.absUrl()<h3>{{url}}</h3></p>
+		<p>response.data<h3>{{myhttp}}</h3></p>
+	</div>
+
+	<script>
+		var app = angular.module('myApp',[]);
+		app.controller('myCtrl',function($scope,$location,$http){
+			$scope.url = $location.absUrl();
+			$http({
+				method : "GET",
+				url : "mysql.php"
+			}).then(function mySuccess(response){
+				$scope.myhttp = response.data;
+			},function myError(response){
+				$scope.myhttp = response.statustext;
+			});
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Directive</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+	<div data-ng-app="myapp" data-ng-controller='myCtrl'>
+
+	<my-ng-directive>
+	</my-ng-directive>
+
+	<h2 ng-bind-template = '{{name}} {{age}}'></h2>
+	<script >
+		
+		var app = angular.module('myapp',[]);
+
+		app.directive('myNgDirective',function(){
+			return {
+				template : "<h1>my name is mayur</h1>"
+			}
+		});
+
+		app.controller('myCtrl',function($scope){
+			$scope.name = 'Devarshi';
+			$scope.age = 21;
+		});
+
+	</script>
+
+	</div>
+
+</body>
+</html>

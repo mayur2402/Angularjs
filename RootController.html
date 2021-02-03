@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Root Scope</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body>
+
+ 	<div data-ng-app="myApp">
+		<h1>Global Scope name = {{name}}</h1>
+		<div data-ng-controller="myCtrl">
+			<h3>Local Scope name with uppercase = {{name | uppercase}}</h3>
+			<h3>Local Scope name with lowercase = {{name | lowercase}}</h3>
+		</div>
+		<h1>Global Scope name = {{name}}</h1>
+	</div>
+
+	<script>
+		var app = angular.module('myApp',[]);
+		app.run(function($rootScope){
+			$rootScope.name = "Mayur Dimble";
+		});
+
+		app.controller('myCtrl',function($scope){
+			$scope.name = "Mayur";
+		});
+	</script>
+</body>
+</html>
